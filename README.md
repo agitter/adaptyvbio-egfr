@@ -3,3 +3,5 @@ Sequences from Adaptyv Bio's [EGFR Protein Design Competition](https://design.ad
 
 `egfr-inhibitors.fasta` contains the original 10 sequences submitted to the competition.
 They are described in this [thread](https://x.com/anthonygitter/status/1827760228122738689).
+
+The `llama-egfr-inhibitor-chat.*` files are transcripts from the five Llama 3.1-405B designs.
