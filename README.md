@@ -24,4 +24,5 @@ Briefly, it is a ColabFold workflow that involves [RFdiffusion](https://doi.org/
 ## Additional information
 - Adaptyv Bio [results](https://foundry.adaptyvbio.com/egfr_design_competition)
 - Adaptyv Bio [GitHub dataset](https://github.com/adaptyvbio/egfr_competition_1)
+- Adaptyv Bio [round 1 competition lessons](https://adaptyvbio.substack.com/p/protein-optimization-102-lessons)
 - Another team submitted additional sequences after the competition and will make their data public
