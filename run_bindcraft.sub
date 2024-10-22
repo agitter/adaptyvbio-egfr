@@ -1,0 +1,18 @@
+container_image = file:///staging/agitter/bindcraft.sif
+
+executable = run_bindcraft.sh
+
+# Include other files that need to be transferred here.
+# transfer_input_files = other_job_files
+
+log = bc_$(Cluster)_$(Process).log
+error = bc_$(Cluster)_$(Process).err
+output = bc_$(Cluster)_$(Process).out
+
+requirements = (HasCHTCStaging == true)
+
+request_cpus = 1
+request_memory = 16GB
+request_disk = 64GB      
+
+queue
