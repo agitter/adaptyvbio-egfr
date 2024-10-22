@@ -31,6 +31,9 @@ See `round1-second-submission-data.csv` for the data table and the `round1-secon
 
 ![Round 1 second submission summary graph](round1-second-submission-summary-graph.png)
 
+The Adaptyv team noted that they ran this experiment at a higher starting concentration (1000 nM) compared to the competition.
+Also, some of the sequences (e.g. `gitter-yolo3` and `gitter-yolo5`) exhibited aggregation.
+
 ## Additional information
 - Adaptyv Bio [results](https://foundry.adaptyvbio.com/egfr_design_competition)
 - Adaptyv Bio [GitHub dataset](https://github.com/adaptyvbio/egfr_competition_1)
