@@ -1,0 +1,84 @@
+# Apptainer Definition file `bindcraft.def` created by https://github.com/komatsuna-san
+# https://github.com/martinpacesa/BindCraft/issues/23#issuecomment-2408333526
+
+BootStrap: docker
+From: nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04
+
+%post
+  # for localtime
+  touch /etc/localtime
+
+  # install package via apt
+  apt update && apt upgrade -y
+  apt install -y build-essential libgfortran5 git curl wget
+  
+  # add en_US.UTF-8 to local
+  apt install -y locales
+  locale-gen en_US.UTF-8
+  
+  # clean up about apt
+  rm -rf /var/lib/apt/lists/* && apt autoremove -y && apt clean
+
+  # install Pyenv
+  git clone https://github.com/yyuu/pyenv.git /usr/local/apps/pyenv
+  export PYENV_ROOT="/usr/local/apps/pyenv"
+  export PATH="${PYENV_ROOT}/bin:${PATH}"
+
+  # install miniforge3
+  pyenv install --list
+  pyenv install miniforge3-23.11.0-0
+  pyenv global miniforge3-23.11.0-0
+  pyenv versions
+  export MINIFORGE3_ROOT="${PYENV_ROOT}/versions/miniforge3-23.11.0-0"
+  export PATH="${MINIFORGE3_ROOT}/bin:${PATH}"
+  
+  # udate conda
+  conda update -n base conda
+  # create bindcraft-conda with CUDA 11.8
+  export CONDA_OVERRIDE_CUDA="11.8"
+  conda create -n bindcraft-conda python=3.9
+  # install deps. via conda
+  conda install -n bindcraft-conda -c conda-forge \
+    pandas numpy=1 biopython==1.79 scipy"<1.13.0" \
+    pdbfixer seaborn tqdm jupyter ffmpeg
+  
+  # clean up conda
+  conda clean --all --force-pkgs-dirs --yes
+  # activate bindcraft-conda
+  export BINDCRAFT_CONDA="${MINIFORGE3_ROOT}/envs/bindcraft-conda"
+  export PATH="${BINDCRAFT_CONDA}/bin:${PATH}"
+  
+  # update pip 
+  python3 -m pip install --no-cache-dir --upgrade pip
+  
+  # install ColabDesign without deps. via pip
+  python3 -m pip install --no-cache-dir --no-deps \
+    'git+https://github.com/sokrypton/ColabDesign.git'
+  # install ColabDesign deps. via pip
+  python3 -m pip install --no-cache-dir \
+    py3Dmol absl-py biopython chex dm-haiku dm-tree \
+    immutabledict jax==0.4.16 jaxlib==0.4.16 ml-collections numpy==1.26.4 \
+    pandas scipy optax joblib matplotlib==3.7.1
+  # install JAX with CUDA 11 via pip
+  python3 -m pip install --no-cache-dir --upgrade "jax[cuda11_pip]==0.4.16" \
+    -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+  
+  # download PyRosetta whl
+  curl -L -O \
+    'https://graylab.jhu.edu/download/PyRosetta4/archive/release/PyRosetta4.Release.python39.ubuntu.wheel/pyrosetta-2024.38+release.200d5f9a7d-cp39-cp39-linux_x86_64.whl'
+  # install PyRosetta via pip
+  python3 -m pip install --no-cache-dir \
+    './pyrosetta-2024.38+release.200d5f9a7d-cp39-cp39-linux_x86_64.whl'
+  rm -f './pyrosetta-2024.38+release.200d5f9a7d-cp39-cp39-linux_x86_64.whl'
+
+  # check bindcraft-conda
+  conda list -n bindcraft-conda
+
+%environment
+  # for BindCraft
+  export MINIFORGE3_ROOT="/usr/local/apps/pyenv/versions/miniforge3-23.11.0-0"
+  export BINDCRAFT_CONDA="${MINIFORGE3_ROOT}/envs/bindcraft-conda"
+  export PATH="${BINDCRAFT_CONDA}/bin:${PATH}"
+
+%runscript
+  "$@"
