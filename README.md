@@ -2,14 +2,14 @@
 Sequences from Adaptyv Bio's [EGFR Protein Design Competition](https://design.adaptyvbio.com/)
 
 ## Original submission
-`egfr-inhibitors.fasta` contains the original 10 sequences submitted to the competition.
+`round1-egfr-inhibitors.fasta` contains the original 10 sequences submitted to the competition.
 They are described in this [thread](https://x.com/anthonygitter/status/1827760228122738689).
 
 The `llama-egfr-inhibitor-chat.*` files are transcripts from the five Llama 3.1-405B designs.
 
-## Second submission
-The post-competition submission included 11 sequences (`second-submission.fasta`):
-- The 9 from `egfr-inhibitors.fasta` that were not selected by Adaptyv during the competition (all except `gitter-yolo1`, simply `yolo1` here)
+## Round 1 second submission
+The post-round 1 submission included 11 sequences (`round1-second-submission.fasta`):
+- The 9 from `round1-egfr-inhibitors.fasta` that were not selected by Adaptyv during the competition (all except `gitter-yolo1`, simply `yolo1` here)
 - Human EGF
 - An additional sequence from [@deepsatflow](https://x.com/deepsatflow/status/1838608857372733659)
 
