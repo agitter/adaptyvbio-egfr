@@ -27,6 +27,8 @@ None of the designed round 1 second submissions bound EGFR.
 Only the positive control, human EGF, bound the target.
 See `round1-second-submission-data.csv` for the data table and the `round1-second-submission-raw-data` subdirectory for the raw kinetic data.
 
+![Round 1 second submission summary graph](round1-second-submission-summary-graph.png)
+
 ## Additional information
 - Adaptyv Bio [results](https://foundry.adaptyvbio.com/egfr_design_competition)
 - Adaptyv Bio [GitHub dataset](https://github.com/adaptyvbio/egfr_competition_1)
