@@ -35,4 +35,4 @@ See `round1-second-submission-data.csv` for the data table and the `round1-secon
 - Adaptyv Bio [results](https://foundry.adaptyvbio.com/egfr_design_competition)
 - Adaptyv Bio [GitHub dataset](https://github.com/adaptyvbio/egfr_competition_1)
 - Adaptyv Bio [round 1 competition lessons](https://adaptyvbio.substack.com/p/protein-optimization-102-lessons)
-- Another team submitted additional sequences after the competition and will make their data public
+- The [BioLM](https://biolm.ai/) team submitted additional sequences after round 1 and [shared their analysis](https://x.com/NikhilHaas/status/1844446275967779284)
