@@ -1,4 +1,6 @@
 # Adaptyv Bio EGFR Protein Design Competition
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13972594.svg)](https://doi.org/10.5281/zenodo.13972594)
+
 Sequences and additional screening data from Adaptyv Bio's [EGFR Protein Design Competition](https://design.adaptyvbio.com/)
 
 ## Round 1 submission
