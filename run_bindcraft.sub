@@ -3,7 +3,11 @@ container_image = file:///staging/agitter/bindcraft.sif
 executable = run_bindcraft.sh
 
 # Include other files that need to be transferred here.
-# transfer_input_files = other_job_files
+# https://htcondor.readthedocs.io/en/latest/man-pages/condor_submit.html#transfer_input_files
+transfer_input_files = bindcraft.py, PDL1_example/
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
 
 log = bc_$(Cluster)_$(Process).log
 error = bc_$(Cluster)_$(Process).err
@@ -11,8 +15,15 @@ output = bc_$(Cluster)_$(Process).out
 
 requirements = (HasCHTCStaging == true)
 
-request_cpus = 1
+request_gpus = 1
+request_cpus = 4
 request_memory = 16GB
 request_disk = 64GB      
 
-queue
+gpus_minimum_runtime = 11.8 # https://htcondor.readthedocs.io/en/latest/man-pages/condor_submit.html#gpus_minimum_runtime
+gpus_minimum_memory = 40GB
+
++WantGPULab = true
++GPUJobLength = "medium" 
+
+queue 1

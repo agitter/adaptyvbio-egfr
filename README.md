@@ -1,10 +1,8 @@
 # Adaptyv EGFR protein design competition round 2
 
 ## Building BindCraft
-Apptainer Definition file `bindcraft.def` created by [@komatsuna-san](https://github.com/martinpacesa/BindCraft/issues/23#issuecomment-2408333526).
-
 I built the Apptainer container with an interactive CHTC job following their [instructions](https://chtc.cs.wisc.edu/uw-research-computing/apptainer-htc) and the submit file `build_bindcraft.sub`.
-This was submitted with ` condor_submit -i build_bindcraft.sub`.
+This was submitted with `condor_submit -i build_bindcraft.sub`.
 
 Within the interactive job, I ran
 ```
@@ -12,8 +10,14 @@ chmod 1777 /tmp
 apptainer build bindcraft.sif bindcraft.def
 mv bindcraft.sif /staging/agitter
 ```
-`chmod` was needed to address errors related to [temporary files](https://superuser.com/questions/1496529/sudo-apt-get-update-couldnt-create-temporary-file) encountered during the container build.
+`chmod` was needed to address errors related to [temporary files](https://superuser.com/questions/1496529/sudo-apt-get-update-couldnt-create-temporary-file) encountered during the container build (see below).
 
+## Third-party files
+- `bindcraft.def`: Apptainer Definition file created by [@komatsuna-san](https://github.com/martinpacesa/BindCraft/issues/23#issuecomment-2408333526).
+- `bindcraft.py`: BindCraft Python script from its [GitHub repo](https://github.com/martinpacesa/BindCraft/blob/d2d3cd0b5d6b02d12d24afa59e640717e36f552c/bindcraft.py) (version 1.1.0). Available under the [MIT License](https://github.com/martinpacesa/BindCraft/blob/main/LICENSE).
+- `PDL1_example`: BindCraft example files in this subdirectory are from its [GitHub repo](https://github.com/martinpacesa/BindCraft/tree/d2d3cd0b5d6b02d12d24afa59e640717e36f552c) (version 1.1.0). Available under the [MIT License](https://github.com/martinpacesa/BindCraft/blob/main/LICENSE).
+
+## Apptainer build error
 Errors encountered related to `/tmp` permissions during container build.
 ```
 W: GPG error: https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64  InRelease: Couldn't create temporary file /tmp/apt.conf.xCxAs0 for passing config to apt-key
