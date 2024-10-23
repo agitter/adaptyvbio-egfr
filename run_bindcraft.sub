@@ -20,7 +20,8 @@ request_cpus = 4
 request_memory = 16GB
 request_disk = 64GB      
 
-gpus_minimum_runtime = 11.8 # https://htcondor.readthedocs.io/en/latest/man-pages/condor_submit.html#gpus_minimum_runtime
+# https://htcondor.readthedocs.io/en/latest/man-pages/condor_submit.html#gpus_minimum_runtime
+gpus_minimum_runtime = 11.8
 gpus_minimum_memory = 40GB
 
 +WantGPULab = true
