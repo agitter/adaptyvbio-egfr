@@ -15,7 +15,7 @@ mv bindcraft.sif /staging/agitter
 The container does not include the actual BindCraft source code, so that was downloaded separately and transferred to jobs.
 BindCraft v1.1.0 was downloaded with
 ```
-wget -O bindcraft-v1.1.0.zip https://github.com/martinpacesa/BindCraft/archive/refs/tags/v1.1.0.zip
+wget -O bindcraft-v1.1.0.tar.gz https://github.com/martinpacesa/BindCraft/archive/refs/tags/v1.1.0.tar.gz
 ```
 
 ## AlphaFold2 weights
@@ -28,7 +28,7 @@ $ scp alphafold_params_2022-12-06.tar agitter@transfer.chtc.wisc.edu:/staging/ag
 
 ## Third-party files
 - `bindcraft.def`: Apptainer Definition file created by [@komatsuna-san](https://github.com/martinpacesa/BindCraft/issues/23#issuecomment-2408333526).
-- `bindcraft-v1.1.0.zip`: BindCraft [v1.1.0 release](https://github.com/martinpacesa/BindCraft/releases/tag/v1.1.0) archive. Available under the [MIT License](https://github.com/martinpacesa/BindCraft/blob/main/LICENSE).
+- `bindcraft-v1.1.0.tar.gz`: BindCraft [v1.1.0 release](https://github.com/martinpacesa/BindCraft/releases/tag/v1.1.0) archive. Available under the [MIT License](https://github.com/martinpacesa/BindCraft/blob/main/LICENSE).
 - `PDL1_example`: BindCraft example files in this subdirectory are from its [GitHub repo](https://github.com/martinpacesa/BindCraft/tree/d2d3cd0b5d6b02d12d24afa59e640717e36f552c) (version 1.1.0). Available under the [MIT License](https://github.com/martinpacesa/BindCraft/blob/main/LICENSE).
 
 ## Apptainer build error
