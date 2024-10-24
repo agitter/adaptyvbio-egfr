@@ -4,7 +4,7 @@ executable = run_bindcraft.sh
 
 # Include other files that need to be transferred here.
 # https://htcondor.readthedocs.io/en/latest/man-pages/condor_submit.html#transfer_input_files
-transfer_input_files = bindcraft-v1.1.0.zip, PDL1_example/
+transfer_input_files = bindcraft-v1.1.0.tar.gz, PDL1_example/
 
 should_transfer_files = YES
 when_to_transfer_output = ON_EXIT

@@ -1,6 +1,7 @@
 #!/bin/bash
 # Get the AlphaFold2 weights
-cp /staging/agitter/alphafold_params_2022-12-06.tar ./params
+mkdir ./params
+cp /staging/agitter/alphafold_params_2022-12-06.tar ./params/
 tar -xvf ./params/alphafold_params_2022-12-06.tar --directory ./params
 
 # Unpack the BindCraft code to the directory BindCraft-1.1.0

@@ -1,4 +1,5 @@
 {
+    "af_params_dir": "./params",
     "omit_AAs": "C",
     "force_reject_AA": false,
     "use_multimer_design": true,
