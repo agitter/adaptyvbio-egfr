@@ -166,3 +166,6 @@ cython_debug/
 *.log
 *.err
 *.out
+
+# AlphaFold2 weights
+params/

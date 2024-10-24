@@ -12,9 +12,23 @@ mv bindcraft.sif /staging/agitter
 ```
 `chmod` was needed to address errors related to [temporary files](https://superuser.com/questions/1496529/sudo-apt-get-update-couldnt-create-temporary-file) encountered during the container build (see below).
 
+The container does not include the actual BindCraft source code, so that was downloaded separately and transferred to jobs.
+BindCraft v1.1.0 was downloaded with
+```
+wget -O bindcraft-v1.1.0.zip https://github.com/martinpacesa/BindCraft/archive/refs/tags/v1.1.0.zip
+```
+
+## AlphaFold2 weights
+The AlphaFold2 weights were downloaded and copied to [CHTC staging](https://chtc.cs.wisc.edu/uw-research-computing/file-avail-largedata.html)
+```
+curl -o params/alphafold_params_2022-12-06.tar https://storage.googleapis.com/alphafold/alphafold_params_2022-12-06.tar
+cd params/
+$ scp alphafold_params_2022-12-06.tar agitter@transfer.chtc.wisc.edu:/staging/agitter/
+```
+
 ## Third-party files
 - `bindcraft.def`: Apptainer Definition file created by [@komatsuna-san](https://github.com/martinpacesa/BindCraft/issues/23#issuecomment-2408333526).
-- `bindcraft.py`: BindCraft Python script from its [GitHub repo](https://github.com/martinpacesa/BindCraft/blob/d2d3cd0b5d6b02d12d24afa59e640717e36f552c/bindcraft.py) (version 1.1.0). Available under the [MIT License](https://github.com/martinpacesa/BindCraft/blob/main/LICENSE).
+- `bindcraft-v1.1.0.zip`: BindCraft [v1.1.0 release](https://github.com/martinpacesa/BindCraft/releases/tag/v1.1.0) archive. Available under the [MIT License](https://github.com/martinpacesa/BindCraft/blob/main/LICENSE).
 - `PDL1_example`: BindCraft example files in this subdirectory are from its [GitHub repo](https://github.com/martinpacesa/BindCraft/tree/d2d3cd0b5d6b02d12d24afa59e640717e36f552c) (version 1.1.0). Available under the [MIT License](https://github.com/martinpacesa/BindCraft/blob/main/LICENSE).
 
 ## Apptainer build error
