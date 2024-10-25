@@ -29,4 +29,4 @@ gpus_minimum_memory = 40GB
 
 environment = "cluster=$(Cluster) process=$(Process)"
 
-queue 1
+queue 5
