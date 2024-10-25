@@ -1,6 +1,6 @@
 #!/bin/bash
 # Get the AlphaFold2 weights
-mkdir ./params
+mkdir -p ./params
 cp /staging/agitter/alphafold_params_2022-12-06.tar ./params/
 tar -xvf ./params/alphafold_params_2022-12-06.tar --directory ./params
 
