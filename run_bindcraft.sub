@@ -25,6 +25,8 @@ gpus_minimum_runtime = 11.8
 gpus_minimum_memory = 40GB
 
 +WantGPULab = true
-+GPUJobLength = "medium" 
++GPUJobLength = "medium"
+
+environment = "cluster=$(Cluster) process=$(Process)"
 
 queue 1

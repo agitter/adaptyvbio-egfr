@@ -14,7 +14,7 @@ chmod u+x ./BindCraft-1.1.0/functions/DAlphaBall.gcc
 python3 -u ./BindCraft-1.1.0/bindcraft.py --settings './PDL1.json' --filters './default_filters.json' --advanced './4stage_multimer.json'
 
 # Tar the output
-tar -czf PDL1_output_${ClusterId}_${ProcessId}.tgz ./PDL1_output
+tar -czf PDL1_output_${cluster}_${process}.tgz ./PDL1_output
 
 # Remove BindCraft code and AlphaFold2 weights
 rm -rf ./BindCraft-1.1.0
