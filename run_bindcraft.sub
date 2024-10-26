@@ -5,13 +5,14 @@ executable = run_bindcraft.sh
 # Include other files that need to be transferred here.
 # https://htcondor.readthedocs.io/en/latest/man-pages/condor_submit.html#transfer_input_files
 transfer_input_files = bindcraft-v1.1.0.tar.gz, PDL1_example/
+transfer_output_remaps = "PDL1_output_$(Cluster)_$(Process).tgz = results/PDL1_output_$(Cluster)_$(Process).tgz"
 
 should_transfer_files = YES
 when_to_transfer_output = ON_EXIT
 
-log = bc_$(Cluster)_$(Process).log
-error = bc_$(Cluster)_$(Process).err
-output = bc_$(Cluster)_$(Process).out
+log = logs/bc_$(Cluster)_$(Process).log
+error = logs/bc_$(Cluster)_$(Process).err
+output = logs/bc_$(Cluster)_$(Process).out
 
 requirements = (HasCHTCStaging == true)
 
@@ -29,4 +30,4 @@ gpus_minimum_memory = 40GB
 
 environment = "cluster=$(Cluster) process=$(Process)"
 
-queue 5
+queue 2
