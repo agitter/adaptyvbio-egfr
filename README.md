@@ -30,7 +30,7 @@ $ scp alphafold_params_2022-12-06.tar agitter@transfer.chtc.wisc.edu:/staging/ag
 The structure (PDB [6ARU](https://www.rcsb.org/structure/6aru)) and interaction sites are those provided by [Adaptyv](https://design.adaptyvbio.com/).
 A single HTCondor submission file `run_bindcraft_EGFR.sub` and exectuable script `run_bindcraft_EGFR.sh` were used to submit different batches of BindCraft jobs.
 Environment variables controlled which BindCraft settings in the `EGFR` subdirectory were passed to the script.
-1. Default BindCraft filters and advanced settings. All interaction sites from Adaptyv.
+1. Default BindCraft filters and advanced settings. All interaction sites from Adaptyv. Lengths 50 to 250.
 
 
 ## Third-party files
