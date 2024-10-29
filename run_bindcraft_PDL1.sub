@@ -1,6 +1,6 @@
 container_image = file:///staging/agitter/bindcraft.sif
 
-executable = run_bindcraft.sh
+executable = run_bindcraft_PDL1.sh
 
 # Include other files that need to be transferred here.
 # https://htcondor.readthedocs.io/en/latest/man-pages/condor_submit.html#transfer_input_files
