@@ -11,7 +11,7 @@ chmod u+x ./BindCraft-1.1.0/functions/dssp
 chmod u+x ./BindCraft-1.1.0/functions/DAlphaBall.gcc
 
 # Run BindCraft
-python3 -u ./BindCraft-1.1.0/bindcraft.py --settings './EGFR_1.json' --filters './default_filters_1.json' --advanced './4stage_multimer_1.json'
+python3 -u ./BindCraft-1.1.0/bindcraft.py --settings './EGFR_${settings}.json' --filters './default_filters_${filters}.json' --advanced './4stage_multimer_${advanced}.json'
 
 # Tar the output
 tar -czf EGFR_output_${cluster}_${process}.tgz ./EGFR_output
