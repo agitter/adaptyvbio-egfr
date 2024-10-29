@@ -30,6 +30,7 @@ $ scp alphafold_params_2022-12-06.tar agitter@transfer.chtc.wisc.edu:/staging/ag
 - `bindcraft.def`: Apptainer Definition file created by [@komatsuna-san](https://github.com/martinpacesa/BindCraft/issues/23#issuecomment-2408333526).
 - `bindcraft-v1.1.0.tar.gz`: BindCraft [v1.1.0 release](https://github.com/martinpacesa/BindCraft/releases/tag/v1.1.0) archive. Available under the [MIT License](https://github.com/martinpacesa/BindCraft/blob/main/LICENSE).
 - `PDL1_example`: BindCraft example files in this subdirectory are from its [GitHub repo](https://github.com/martinpacesa/BindCraft/tree/d2d3cd0b5d6b02d12d24afa59e640717e36f552c) (version 1.1.0). Available under the [MIT License](https://github.com/martinpacesa/BindCraft/blob/main/LICENSE).
+- `6aru.pdb`: Structure of Cetuximab Fab mutant in complex with EGFR extracellular domain (PDB [6ARU](https://www.rcsb.org/structure/6aru))
 
 ## Apptainer build error
 Errors encountered related to `/tmp` permissions during container build.
