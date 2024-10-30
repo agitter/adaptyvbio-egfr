@@ -1,0 +1,3 @@
+[submodule "competition_metrics"]
+	path = competition_metrics
+	url = https://github.com/adaptyvbio/competition_metrics
