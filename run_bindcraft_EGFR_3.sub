@@ -1,0 +1,36 @@
+container_image = file:///staging/agitter/bindcraft.sif
+
+executable = run_bindcraft_EGFR.sh
+
+# Include other files that need to be transferred here.
+# https://htcondor.readthedocs.io/en/latest/man-pages/condor_submit.html#transfer_input_files
+transfer_input_files = bindcraft-v1.1.0.tar.gz, EGFR/
+transfer_output_remaps = "EGFR_output_$(Cluster)_$(Process).tgz = results/EGFR_output_$(Cluster)_$(Process).tgz"
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+
+log = logs/bc_$(Cluster)_$(Process).log
+error = logs/bc_$(Cluster)_$(Process).err
+output = logs/bc_$(Cluster)_$(Process).out
+
+requirements = (HasCHTCStaging == true)
+
+request_gpus = 1
+request_cpus = 4
+request_memory = 48GB
+request_disk = 64GB      
+
+# https://htcondor.readthedocs.io/en/latest/man-pages/condor_submit.html#gpus_minimum_runtime
+gpus_minimum_runtime = 11.8
+gpus_minimum_memory = 40GB
+# https://en.wikipedia.org/wiki/CUDA#GPUs_supported
+gpus_maximum_capability = 8.9
+
++WantGPULab = true
++GPUJobLength = "medium"
+
+# Use environment variables to control the indices of the settings files to provide as input
+environment = "cluster=$(Cluster) process=$(Process) settings=3 filters=1 advanced=1"
+
+queue 20

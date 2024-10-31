@@ -32,6 +32,8 @@ A different HTCondor submission file `run_bindcraft_EGFR_<n>.sub` was used for e
 Environment variables controlled which BindCraft settings in the `EGFR` subdirectory were passed to the script.
 1. Default BindCraft filters and advanced settings. All interaction sites from Adaptyv. Lengths 50 to 250.
 2. Default BindCraft filters and advanced settings. Domain 3 structure without interaction sites. Lengths 60 to 120. Strategy from [@design_proteins](https://x.com/design_proteins/status/1851295516564525515) and structure from [@btnaughton](https://x.com/btnaughton/status/1851436952446537980).
+3. Default BindCraft filters and advanced settings. Domain 3 structure without interaction sites. Lengths 50 to 75. Modifies strategy 2 with shorter lengths.
+
 
 ## Third-party files
 - `bindcraft.def`: Apptainer Definition file created by [@komatsuna-san](https://github.com/martinpacesa/BindCraft/issues/23#issuecomment-2408333526).
