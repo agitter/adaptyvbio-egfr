@@ -18,8 +18,8 @@ requirements = (HasCHTCStaging == true)
 
 request_gpus = 1
 request_cpus = 4
-request_memory = 48GB
-request_disk = 64GB      
+request_memory = 64GB
+request_disk = 64GB
 
 # https://htcondor.readthedocs.io/en/latest/man-pages/condor_submit.html#gpus_minimum_runtime
 gpus_minimum_runtime = 11.8
