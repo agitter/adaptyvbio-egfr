@@ -13,3 +13,4 @@ dependencies:
   - biopandas=0.2.7
   - fair-esm=2.0.0
   - click
+  - setuptools
