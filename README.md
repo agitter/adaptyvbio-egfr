@@ -36,7 +36,7 @@ Environment variables controlled which BindCraft settings in the `EGFR` subdirec
 
 ## Analysis
 The analysis code runs in the `adaptyv` conda environment created with `environment.yml`.
-It was derived from the [METL](https://github.com/gitter-lab/metl/blob/9912989380ebe1246a2e35a92488e424d7ae571b/environment.yml) environment to be compatible with METL pretrained models.
+It was derived from the [METL](https://github.com/gitter-lab/metl/blob/9912989380ebe1246a2e35a92488e424d7ae571b/environment.yml) environment to be compatible with METL pretrained models and updated to add requirements for the Adaptyv `competition_metrics`.
 
 ## Third-party files
 - `bindcraft.def`: Apptainer Definition file created by [@komatsuna-san](https://github.com/martinpacesa/BindCraft/issues/23#issuecomment-2408333526).
