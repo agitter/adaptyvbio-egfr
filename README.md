@@ -34,6 +34,9 @@ Environment variables controlled which BindCraft settings in the `EGFR` subdirec
 2. Default BindCraft filters and advanced settings. Domain 3 structure without interaction sites. Lengths 60 to 120. Strategy from [@design_proteins](https://x.com/design_proteins/status/1851295516564525515) and structure from [@btnaughton](https://x.com/btnaughton/status/1851436952446537980).
 3. Default BindCraft filters and advanced settings. Domain 3 structure without interaction sites. Lengths 50 to 75. Modifies strategy 2 with shorter lengths.
 
+## Analysis
+The analysis code runs in the `adaptyv` conda environment created with `environment.yml`.
+It was derived from the [METL](https://github.com/gitter-lab/metl/blob/9912989380ebe1246a2e35a92488e424d7ae571b/environment.yml) environment to be compatible with METL pretrained models.
 
 ## Third-party files
 - `bindcraft.def`: Apptainer Definition file created by [@komatsuna-san](https://github.com/martinpacesa/BindCraft/issues/23#issuecomment-2408333526).
