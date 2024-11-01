@@ -35,6 +35,7 @@ Environment variables controlled which BindCraft settings in the `EGFR` subdirec
 3. Default BindCraft filters and advanced settings. Domain 3 structure without interaction sites. Lengths 50 to 75. Modifies strategy 2 with shorter lengths.
 4. Default BindCraft filters. Modify advanced settings to increase `weights_pae_inter` and `weights_iptm` 4x. Domain 3 structure without interaction sites. Lengths 60 to 120.
 5. Default BindCraft filters. Modify advanced settings to increase `weights_pae_inter` and `weights_iptm` 4x and `weights_helicity` to -1. Domain 3 structure without interaction sites. Lengths 60 to 120.
+6. Default BindCraft filters and advanced settings. All interaction sites from Adaptyv. Lengths 50 to 250. Same as setting 1 but reconfigured into a larger number of shorter jobs.
 
 ## Analysis
 The analysis code runs in the `adaptyv` conda environment created with `environment.yml`.
