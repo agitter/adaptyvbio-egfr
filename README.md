@@ -42,6 +42,21 @@ The analysis code runs in the `adaptyv` conda environment created with `environm
 It was derived from the [METL](https://github.com/gitter-lab/metl/blob/9912989380ebe1246a2e35a92488e424d7ae571b/environment.yml) environment to be compatible with METL pretrained models and updated to add requirements for the Adaptyv `competition_metrics`.
 After creating and activating the environment, `pip install metl-pretrained/` to install the local METL package.
 
+## Submissions
+### Submission 1
+After the [announcement](https://x.com/adaptyvbio/status/1852435680506355823) that "You can also submit more than once but we will only count the last 10 designs for the leaderboard", I made an initial submission on 2024-11-01 before the full pipeline was finished to get initial feedback.
+This submission collected all BindCraft designs with the ChatGPT 4o mini-suggested command
+```
+find . -type f -path './EGFR_output_*/*final_design_stats.csv' -exec cat {} + > round2_concatenated_final_design_stats_sub1.csv
+```
+That file was manually reviewed to:
+- Prioritize Average_i_pTM
+- Use Average_i_pAE and Average_pLDDT as secondary criteria
+- Select sequences from unique seeds
+- Select two sequences from runs with `weights_helicity` -1.0
+
+The resulting 10 sequences are `round2-egfr-inhibitors-submission1-key.fasta` and an anonymized version is `round2-egfr-inhibitors-submission1.fasta` that strips the BindCraft design names.
+
 ## Third-party files
 - `bindcraft.def`: Apptainer Definition file created by [@komatsuna-san](https://github.com/martinpacesa/BindCraft/issues/23#issuecomment-2408333526).
 - `bindcraft-v1.1.0.tar.gz`: BindCraft [v1.1.0 release](https://github.com/martinpacesa/BindCraft/releases/tag/v1.1.0) archive. Available under the [MIT License](https://github.com/martinpacesa/BindCraft/blob/main/LICENSE).
