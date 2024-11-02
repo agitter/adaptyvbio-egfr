@@ -171,6 +171,7 @@ cython_debug/
 params/
 
 # BindCraft results not used in analysis
+results/*.tgz
 results/EGFR*/Accepted/**
 !results/EGFR*/Accepted/*.pdb
 results/EGFR*/MPNN
