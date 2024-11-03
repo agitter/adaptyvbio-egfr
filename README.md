@@ -43,6 +43,10 @@ The analysis code runs in the `adaptyv` conda environment created with `environm
 It was derived from the [METL](https://github.com/gitter-lab/metl/blob/9912989380ebe1246a2e35a92488e424d7ae571b/environment.yml) environment to be compatible with METL pretrained models and updated to add requirements for the Adaptyv `competition_metrics`.
 After creating and activating the environment, `pip install metl-pretrained/` to install the local METL package.
 
+`round2-esm2-pll-check.tsv` is an intermediate file with ESM2 PLLs from the 35M, 150M, and 650M models for 25 round 2 sequences.
+It was used to assess if the smaller models could be used to compute PLL for ranking and filtering so that the PLL could be computed on CPU for convenience.
+The Pearson correlation of the smaller models with the 650M model is > 0.98.
+
 ## Submissions
 ### Submission 1
 After the [announcement](https://x.com/adaptyvbio/status/1852435680506355823) that "You can also submit more than once but we will only count the last 10 designs for the leaderboard", I made an initial submission on 2024-11-01 before the full pipeline was finished to get initial feedback.
@@ -62,7 +66,7 @@ On 2024-11-02, the results were
 
 ### Submission 2
 The second submission focused on short sequences. I generated `round2_concatenated_final_design_stats_sub1.csv` using the additional BindCraft runs that had finish and manually reviewed the file using the same criteria as before using the same criteria.
-This time I required the general sequences to have length <= 60 and the non-helical sequences to have length <= 75 (none were <= 60).
+This time I required the general sequences to have length <= 60 and the non-helical sequences to have length <= 75 (none were run with allowed lengths <= 60).
 
 ## Third-party files
 - `bindcraft.def`: Apptainer Definition file created by [@komatsuna-san](https://github.com/martinpacesa/BindCraft/issues/23#issuecomment-2408333526).
