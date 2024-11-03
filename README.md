@@ -56,6 +56,8 @@ That file was manually reviewed to:
 - Select two sequences from runs with `weights_helicity` -1.0
 
 The resulting 10 sequences are `round2-egfr-inhibitors-submission1-key.fasta` and an anonymized version is `round2-egfr-inhibitors-submission1.fasta` that strips the BindCraft design names.
+On 2024-11-02, the results were  
+![submission 1 results](results/round2-egfr-inhibitors-submission1-leaderboard-2024-11-02.png)
 
 ## Third-party files
 - `bindcraft.def`: Apptainer Definition file created by [@komatsuna-san](https://github.com/martinpacesa/BindCraft/issues/23#issuecomment-2408333526).
