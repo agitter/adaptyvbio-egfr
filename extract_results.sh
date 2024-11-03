@@ -13,12 +13,19 @@ for tarball in "$input_dir"/EGFR_output_*.tgz; do
         cluster="${BASH_REMATCH[1]}"
         process="${BASH_REMATCH[2]}"
         
+        new_directory="${input_dir}/EGFR_output_${cluster}_${process}"
+
+        # Check if the output directory already exists
+        if [ -d "$new_directory" ]; then
+            echo "Directory $new_directory already exists. Skipping $tarball."
+            continue  # Skip to the next iteration
+        fi
+
         # Extract the tarball
         tar -xzf "$tarball" -C "$input_dir"
 
-        # Rename the output directory
+        # Output directory to rename
         old_directory="${input_dir}/EGFR_output"
-        new_directory="${input_dir}/EGFR_output_${cluster}_${process}"
 
         if [ -d "$old_directory" ]; then
             mv "$old_directory" "$new_directory"
@@ -30,4 +37,3 @@ for tarball in "$input_dir"/EGFR_output_*.tgz; do
         echo "Filename $tarball does not match expected pattern."
     fi
 done
-
