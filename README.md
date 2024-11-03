@@ -60,6 +60,10 @@ The resulting 10 sequences are `round2-egfr-inhibitors-submission1-key.fasta` an
 On 2024-11-02, the results were  
 ![submission 1 results](results/round2-egfr-inhibitors-submission1-leaderboard-2024-11-02.png)
 
+### Submission 2
+The second submission focused on short sequences. I generated `round2_concatenated_final_design_stats_sub1.csv` using the additional BindCraft runs that had finish and manually reviewed the file using the same criteria as before using the same criteria.
+This time I required the general sequences to have length <= 60 and the non-helical sequences to have length <= 75 (none were <= 60).
+
 ## Third-party files
 - `bindcraft.def`: Apptainer Definition file created by [@komatsuna-san](https://github.com/martinpacesa/BindCraft/issues/23#issuecomment-2408333526).
 - `bindcraft-v1.1.0.tar.gz`: BindCraft [v1.1.0 release](https://github.com/martinpacesa/BindCraft/releases/tag/v1.1.0) archive. Available under the [MIT License](https://github.com/martinpacesa/BindCraft/blob/main/LICENSE).
