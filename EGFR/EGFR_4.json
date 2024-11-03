@@ -4,6 +4,6 @@
     "starting_pdb": "./6aru.pdb",
     "chains": "A",
     "target_hotspot_residues": "11-13,15-18,356,440-441",
-    "lengths": [50, 250],
+    "lengths": [50, 200],
     "number_of_final_designs": 1
 }

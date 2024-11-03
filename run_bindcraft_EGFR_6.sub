@@ -28,9 +28,9 @@ gpus_minimum_memory = 70GB
 gpus_maximum_capability = 8.9
 
 +WantGPULab = true
-+GPUJobLength = "short"
++GPUJobLength = "medium"
 
 # Use environment variables to control the indices of the settings files to provide as input
-environment = "cluster=$(Cluster) process=$(Process) settings=4 filters=1 advanced=1"
+environment = "cluster=$(Cluster) process=$(Process) settings=4 filters=1 advanced=4"
 
 queue 100
