@@ -37,6 +37,7 @@ Environment variables controlled which BindCraft settings in the `EGFR` subdirec
 5. Default BindCraft filters. Modify advanced settings to increase `weights_pae_inter` and `weights_iptm` 4x and `weights_helicity` to -1. Domain 3 structure without interaction sites. Lengths 60 to 120.
 6. Default BindCraft filters and advanced settings. All interaction sites from Adaptyv. Lengths 50 to 200. Similar to setting 1 but reconfigured into a larger number of shorter jobs and shortened max length. Reduced iteractions to reduce runtime.
 7. Default BindCraft filters. Modify advanced settings to increase `weights_pae_inter` and `weights_iptm` 4x. Domain 3 structure with interaction sites. Lengths 60 to 120.
+8. Default BindCraft filters and advanced settings. All interaction sites from Adaptyv. Lengths 50 to 200. Similar to setting 6 but further reduced iteractions to reduce runtime.
 
 ## Analysis
 The analysis code runs in the `adaptyv` conda environment created with `environment.yml`.
@@ -61,12 +62,20 @@ That file was manually reviewed to:
 - Select two sequences from runs with `weights_helicity` -1.0
 
 The resulting 10 sequences are `round2-egfr-inhibitors-submission1-key.fasta` and an anonymized version is `round2-egfr-inhibitors-submission1.fasta` that strips the BindCraft design names.
-On 2024-11-02, the results were  
-![submission 1 results](results/round2-egfr-inhibitors-submission1-leaderboard-2024-11-02.png)
+On 2024-11-02, the results were [saved](results/round2-egfr-inhibitors-submission1-leaderboard-2024-11-02.png).
 
 ### Submission 2
 The second submission focused on short sequences. I generated `round2_concatenated_final_design_stats_sub1.csv` using the additional BindCraft runs that had finish and manually reviewed the file using the same criteria as before using the same criteria.
 This time I required the general sequences to have length <= 60 and the non-helical sequences to have length <= 75 (none were run with allowed lengths <= 60).
+The resulting 10 sequences are `round2-egfr-inhibitors-submission2-key.fasta` and `round2-egfr-inhibitors-submission2.fasta.
+
+### Submission 3
+The third submission added additional scores to the BindCraft designs: [ESM2](https://github.com/facebookresearch/esm) 35M PLL and [METL-Global](https://github.com/gitter-lab/metl-pretrained) 20M 1D approximation of [Rosetta](https://rosettacommons.org/) total score.
+A new script collects the BindCraft designs and generates these scores:
+```
+python analyze_results.py -o round2_concatenated_final_design_stats_sub3
+```
+to create `results/round2_concatenated_final_design_stats_sub3.tsv`.
 
 ## Third-party files
 - `bindcraft.def`: Apptainer Definition file created by [@komatsuna-san](https://github.com/martinpacesa/BindCraft/issues/23#issuecomment-2408333526).
