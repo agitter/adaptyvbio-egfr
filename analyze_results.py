@@ -14,6 +14,8 @@ from competition_metrics.compute_pll import compute_pll
 # https://github.com/gitter-lab/metl-pretrained?tab=readme-ov-file#global-source-models
 METL_MODEL_ID = 'METL-G-20M-1D'
 
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
 
 def add_metl_scores(df, batch_size=1):
     """
@@ -23,6 +25,7 @@ def add_metl_scores(df, batch_size=1):
     """
     metl_model, metl_data_encoder = metl.get_from_ident(METL_MODEL_ID)
     metl_model.eval()
+    metl_model = metl_model.to(device)
 
     scores = []  # List to store scores
 
@@ -74,10 +77,13 @@ def main(output):
 
     concat_df = concat_df[:25]
 
-    # Add ESM2 650M PLL scores for each sequence
-    concat_df['ESM2_650M_PLL'] = concat_df['Sequence'].apply(compute_pll, model_type='650M')
-    concat_df['ESM2_150M_PLL'] = concat_df['Sequence'].apply(compute_pll, model_type='150M')
-    concat_df['ESM2_35M_PLL'] = concat_df['Sequence'].apply(compute_pll, model_type='35M')
+    # Add ESM2 35M PLL scores for each sequence
+    # concat_df['ESM2_650M_PLL'] = concat_df['Sequence'].apply(compute_pll, model_type='650M')
+    # concat_df['ESM2_150M_PLL'] = concat_df['Sequence'].apply(compute_pll, model_type='150M')
+    # concat_df['ESM2_35M_PLL'] = concat_df['Sequence'].apply(compute_pll, model_type='35M')
+
+    # Add METL Global scores for each sequence
+    concat_df = add_metl_scores(concat_df, batch_size=1)
 
     output = f'results/{output}.tsv'
     concat_df.to_csv(output, sep='\t', index=False)
