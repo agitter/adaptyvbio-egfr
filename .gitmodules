@@ -5,4 +5,4 @@
 	path = metl-pretrained
 	url = https://github.com/gitter-lab/metl-pretrained
 [submodule "competition_metrics/"]
-	url = https://github.com/adaptyvbio/competition_metrics
+	url = https://github.com/agitter/competition_metrics
