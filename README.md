@@ -68,6 +68,7 @@ On 2024-11-02, the results were [saved](results/round2-egfr-inhibitors-submissio
 The second submission focused on short sequences. I generated `round2_concatenated_final_design_stats_sub1.csv` using the additional BindCraft runs that had finish and manually reviewed the file using the same criteria as before using the same criteria.
 This time I required the general sequences to have length <= 60 and the non-helical sequences to have length <= 75 (none were run with allowed lengths <= 60).
 The resulting 10 sequences are `round2-egfr-inhibitors-submission2-key.fasta` and `round2-egfr-inhibitors-submission2.fasta.
+These sequences were not scored when the leaderboard updated on 2024-11-03.
 
 ### Submission 3
 The third submission added additional scores to the BindCraft designs: [ESM2](https://github.com/facebookresearch/esm) 35M PLL and [METL-Global](https://github.com/gitter-lab/metl-pretrained) 20M 1D approximation of [Rosetta](https://rosettacommons.org/) total score.
@@ -76,6 +77,11 @@ A new script collects the BindCraft designs and generates these scores:
 python analyze_results.py -o round2_concatenated_final_design_stats_sub3
 ```
 to create `results/round2_concatenated_final_design_stats_sub3.tsv`.
+
+That file was manually reviewed to select five sequences with unique seeds that have the best (lowest) `METL-G-20M-1D` score, which is a standardized Rosetta total_score.
+The other five sequences were those with unique seeds that have the best (highest) `ESM2_35M_PLL` score.
+This was not length normalized, so they are all very short sequences.
+The resulting 10 sequences are `round2-egfr-inhibitors-submission3-key.fasta` and `round2-egfr-inhibitors-submission3.fasta.
 
 ## Third-party files
 - `bindcraft.def`: Apptainer Definition file created by [@komatsuna-san](https://github.com/martinpacesa/BindCraft/issues/23#issuecomment-2408333526).
