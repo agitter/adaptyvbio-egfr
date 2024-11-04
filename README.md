@@ -68,7 +68,7 @@ On 2024-11-02, the results were [saved](results/round2-egfr-inhibitors-submissio
 The second submission focused on short sequences. I generated `round2_concatenated_final_design_stats_sub1.csv` using the additional BindCraft runs that had finish and manually reviewed the file using the same criteria as before using the same criteria.
 This time I required the general sequences to have length <= 60 and the non-helical sequences to have length <= 75 (none were run with allowed lengths <= 60).
 The resulting 10 sequences are `round2-egfr-inhibitors-submission2-key.fasta` and `round2-egfr-inhibitors-submission2.fasta.
-These sequences were not scored when the leaderboard updated on 2024-11-03.
+On 2024-11-04, the results were [saved](results/round2-egfr-inhibitors-submission2-leaderboard-2024-11-04.png).
 
 ### Submission 3
 The third submission added additional scores to the BindCraft designs: [ESM2](https://github.com/facebookresearch/esm) 35M PLL and [METL-Global](https://github.com/gitter-lab/metl-pretrained) 20M 1D approximation of [Rosetta](https://rosettacommons.org/) total score.
