@@ -89,6 +89,7 @@ The resulting 10 sequences are `round2-egfr-inhibitors-submission3-key.fasta` an
 - `PDL1_example`: BindCraft example files in this subdirectory are from its [GitHub repo](https://github.com/martinpacesa/BindCraft/tree/d2d3cd0b5d6b02d12d24afa59e640717e36f552c) (version 1.1.0). Available under the [MIT License](https://github.com/martinpacesa/BindCraft/blob/main/LICENSE).
 - `6aru.pdb`: Structure of Cetuximab Fab mutant in complex with EGFR extracellular domain (PDB [6ARU](https://www.rcsb.org/structure/6aru))
 - `6aru_final_chain_A_domain_3.pdb`: Domain 3 of EGFR structure [6ARU](https://www.rcsb.org/structure/6aru) from @btnaughton's [gist](https://gist.github.com/hgbrian/affd44dc63c6fb01a5a9620c24c74b26) as suggested by [@design_proteins](https://x.com/design_proteins/status/1851308130392473919).
+- Plotting helper function from [Stack Overflow](https://stackoverflow.com/a/50835066)
 
 ## Apptainer build error
 Errors encountered related to `/tmp` permissions during container build.
