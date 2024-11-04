@@ -75,12 +75,10 @@ def main(output):
     # Concatenate all DataFrames into a single DataFrame
     concat_df = pd.concat(dataframes, ignore_index=True)
 
-    concat_df = concat_df[:25]
-
     # Add ESM2 35M PLL scores for each sequence
     # concat_df['ESM2_650M_PLL'] = concat_df['Sequence'].apply(compute_pll, model_type='650M')
     # concat_df['ESM2_150M_PLL'] = concat_df['Sequence'].apply(compute_pll, model_type='150M')
-    # concat_df['ESM2_35M_PLL'] = concat_df['Sequence'].apply(compute_pll, model_type='35M')
+    concat_df['ESM2_35M_PLL'] = concat_df['Sequence'].apply(compute_pll, model_type='35M')
 
     # Add METL Global scores for each sequence
     concat_df = add_metl_scores(concat_df, batch_size=1)
