@@ -1,0 +1,12 @@
+[
+    {"Rank": 51, "Designer": "yolo13", "PAE": 16.84, "ipTM": 0.94, "PLL": -144.90},
+    {"Rank": 53, "Designer": "yolo17", "PAE": 14.17, "ipTM": 0.93, "PLL": -191.29},
+    {"Rank": 54, "Designer": "yolo14", "PAE": 14.45, "ipTM": 0.93, "PLL": -190.98},
+    {"Rank": 63, "Designer": "yolo15", "PAE": 14.96, "ipTM": 0.92, "PLL": -199.01},
+    {"Rank": 70, "Designer": "yolo12", "PAE": 16.55, "ipTM": 0.93, "PLL": -192.92},
+    {"Rank": 72, "Designer": "yolo18", "PAE": 16.50, "ipTM": 0.93, "PLL": -212.14},
+    {"Rank": 81, "Designer": "yolo19", "PAE": 15.11, "ipTM": 0.86, "PLL": -165.93},
+    {"Rank": 100, "Designer": "yolo11", "PAE": 14.84, "ipTM": 0.92, "PLL": -289.38},
+    {"Rank": 105, "Designer": "yolo20", "PAE": 15.79, "ipTM": 0.89, "PLL": -246.08},
+    {"Rank": 153, "Designer": "yolo16", "PAE": 19.00, "ipTM": 0.67, "PLL": -161.64}
+]

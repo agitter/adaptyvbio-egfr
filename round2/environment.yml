@@ -1,0 +1,18 @@
+name: adaptyv
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9.13
+  - pytorch::pytorch=1.12.1
+  - numpy=1.23.4
+  - pandas=2.0.3
+  - scipy=1.9.3
+  - networkx=2.6.3
+  - matplotlib=3.7.2
+  - seaborn=0.12.2
+  - biopandas=0.2.7
+  - click=8.1.7
+  - setuptools=75.3.0
+  - pip=24.3.1
+  - pip:
+      - fair-esm==2.0.0

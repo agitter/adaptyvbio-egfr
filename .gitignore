@@ -159,4 +159,22 @@ cython_debug/
 #  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
-#.idea/
+.idea/
+
+# CHTC files
+.bash_history
+*.log
+*.err
+*.out
+
+# AlphaFold2 weights
+round2/params/
+
+# BindCraft results not used in analysis
+round2/failed/
+round2/results/*.tgz
+round2/results/EGFR*/Accepted/**
+!round2/results/EGFR*/Accepted/*.pdb
+round2/results/EGFR*/MPNN
+round2/results/EGFR*/Rejected
+round2/results/EGFR*/Trajectory

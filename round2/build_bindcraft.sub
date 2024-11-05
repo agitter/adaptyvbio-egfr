@@ -1,0 +1,19 @@
+# For building the Apptainer container
+
+universe = vanilla
+log = build_bindcraft.log
+
+# In the latest version of HTCondor on CHTC, interactive jobs require an executable.
+# If you do not have an existing executable, use a generic linux command like hostname as shown below.
+executable = /usr/bin/hostname
+
+transfer_input_files = bindcraft.def
+
+requirements = (HasCHTCStaging == true)
+
++IsBuildJob = true
+request_cpus = 4
+request_memory = 32GB
+request_disk = 64GB
+
+queue
