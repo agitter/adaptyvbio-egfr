@@ -1,8 +1,7 @@
 [submodule "competition_metrics"]
 	path = round2/competition_metrics
-	url = https://github.com/adaptyvbio/competition_metrics
+	url = https://github.com/agitter/competition_metrics
+	branch = package
 [submodule "metl-pretrained"]
 	path = round2/metl-pretrained
 	url = https://github.com/gitter-lab/metl-pretrained
-[submodule "competition_metrics/"]
-	url = https://github.com/agitter/competition_metrics
