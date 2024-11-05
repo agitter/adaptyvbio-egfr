@@ -9,7 +9,7 @@ They are described in this [thread](https://x.com/anthonygitter/status/182776022
 One of them, `gitter-yolo1`, ranked 21 by iPAE and was selected for testing.
 It had low expression and did not bind EGFR in experimental testing.
 
-The `llama-egfr-inhibitor-chat.*` files are transcripts from the five Llama 3.1-405B designs.
+The `round1/llama-egfr-inhibitor-chat.*` files are transcripts from the five Llama 3.1-405B designs.
 
 ## Round 1 second submission
 I made a post-round 1 submission to Adaptyv for additional experimental screening that included 11 sequences (`round1-second-submission.fasta`):
@@ -33,6 +33,9 @@ See `round1-second-submission-data.csv` for the data table and the `round1-secon
 
 The Adaptyv team noted that they ran this experiment at a higher starting concentration (1000 nM) compared to the competition.
 Also, some of the sequences (e.g. `gitter-yolo3` and `gitter-yolo5`) exhibited aggregation.
+
+## Round 2
+The [`round2`](round2/) subdirectory contains the complete strategy, code, and submissions for round 2 of the competition.
 
 ## Additional information
 - Adaptyv Bio [results](https://foundry.adaptyvbio.com/egfr_design_competition)
