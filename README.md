@@ -11,18 +11,19 @@ Regarding the latter, the ranking metrics prioritized short sequences because th
 Should I bias my BindCraft settings toward short sequences, or would that hurt success in the lab?
 The round 1 winner `martin.pacesa-EGFR_l138_s90285_mpnn2` had length 138 and a ESM2 650M PLL of -320.68, which would put it at risk of falling out of the top 100 in round 2!
 
-I decided to try multiple BindCraft settings and score them with ESM2 PLL and our own biophysics-based protein language model [METL](https://doi.org/10.1101/2024.03.15.585128).
+I decided to try multiple BindCraft settings and score the generated sequences with ESM2 PLL and our own biophysics-based protein language model [METL](https://doi.org/10.1101/2024.03.15.585128).
 We know METL-Global has problems generalizing to all protein folds, but I also expected no one else would use it (creativity points!) and couldn't resist the opportunity for some self-promotion.
 
 ## Lessons learned
-BindCraft was fairly easy to run in my local research computing facility given the complexity of the underlying model.
+BindCraft was fairly easy to run in my local research computing facility (CHTC) given the complexity of the underlying model.
 I did not initially anticipate how much GPU memory and time it would require when running with the full EGFR sequence as input.
 I wasted time with failed jobs that ran out of GPU memory or hit runtime limits.
 
 I was slightly dismayed by the aesthetics of my designs.
-My final submissions were all bland: small and helical predicted structures.
+My final submissions were all bland: small, helical predicted structures.
 I tried penalizing helicity in a few runs, but didn't explore that deeply, and those results were not my best-scoring sequences.
-I'm jealous of the [solenoid](https://x.com/_judewells/status/1853805775807758465) Jude Wells showed.
+I did include some in my initial submissions.
+I'm jealous of the [solenoid](https://x.com/_judewells/status/1853805798641541625) Jude Wells showed.
 Maybe elegance can be part of the selection process for the second set of 100.
 
 Besides those minor gripes, running BindCraft was pleasant.
@@ -104,9 +105,9 @@ The resulting 10 sequences are `round2-egfr-inhibitors-submission1-key.fasta` an
 On 2024-11-02, the results were [saved](results/round2-egfr-inhibitors-submission1-leaderboard-2024-11-02.png).
 
 ### Submission 2
-The second submission focused on short sequences. I generated `round2_concatenated_final_design_stats_sub1.csv` using the additional BindCraft runs that had finish and manually reviewed the file using the same criteria as before using the same criteria.
+The second submission focused on short sequences. I generated `round2_concatenated_final_design_stats_sub1.csv` using the additional BindCraft runs that had finished and manually reviewed the file using the same criteria as before.
 This time I required the general sequences to have length <= 60 and the non-helical sequences to have length <= 75 (none were run with allowed lengths <= 60).
-The resulting 10 sequences are `round2-egfr-inhibitors-submission2-key.fasta` and `round2-egfr-inhibitors-submission2.fasta.
+The resulting 10 sequences are `round2-egfr-inhibitors-submission2-key.fasta` and `round2-egfr-inhibitors-submission2.fasta`.
 On 2024-11-04, the results were [saved](results/round2-egfr-inhibitors-submission2-leaderboard-2024-11-04.png).
 
 ### Submission 3
@@ -120,7 +121,7 @@ to create `results/round2_concatenated_final_design_stats_sub3.tsv`.
 That file was manually reviewed to select five sequences with unique seeds that have the best (lowest) `METL-G-20M-1D` score, which is a standardized Rosetta total_score.
 The other five sequences were those with unique seeds that have the best (highest) `ESM2_35M_PLL` score.
 This was not length normalized, so they are all very short sequences.
-The resulting 10 sequences are `round2-egfr-inhibitors-submission3-key.fasta` and `round2-egfr-inhibitors-submission3.fasta.
+The resulting 10 sequences are `round2-egfr-inhibitors-submission3-key.fasta` and `round2-egfr-inhibitors-submission3.fasta`.
 
 I did not receive results for this submission after 24 hours and made submission 4 without that feedback.
 
