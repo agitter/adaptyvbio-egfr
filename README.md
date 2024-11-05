@@ -39,6 +39,8 @@ Environment variables controlled which BindCraft settings in the `EGFR` subdirec
 7. Default BindCraft filters. Modify advanced settings to increase `weights_pae_inter` and `weights_iptm` 4x. Domain 3 structure with interaction sites. Lengths 60 to 120.
 8. Default BindCraft filters and advanced settings. All interaction sites from Adaptyv. Lengths 50 to 200. Similar to setting 6 but further reduced iteractions to reduce runtime.
 
+Several of these settings did not produce any sequences because the jobs timed out or did not finish before the competition deadline.
+
 ## Analysis
 The analysis code runs in the `adaptyv` conda environment created with `environment.yml`.
 It was derived from the [METL](https://github.com/gitter-lab/metl/blob/9912989380ebe1246a2e35a92488e424d7ae571b/environment.yml) environment to be compatible with METL pretrained models and updated to add requirements for the Adaptyv `competition_metrics`.
@@ -82,6 +84,46 @@ That file was manually reviewed to select five sequences with unique seeds that 
 The other five sequences were those with unique seeds that have the best (highest) `ESM2_35M_PLL` score.
 This was not length normalized, so they are all very short sequences.
 The resulting 10 sequences are `round2-egfr-inhibitors-submission3-key.fasta` and `round2-egfr-inhibitors-submission3.fasta.
+
+### Submission 4 - final submission
+No additional BindCraft runs finished before the deadline, so the fourth and final submission is also based on `results/round2_concatenated_final_design_stats_sub3.tsv`.
+I added visualizations of key sequences metrics using
+```
+python visualize_results.py -i results/round2_concatenated_final_design_stats_sub3.tsv
+```
+to create `results/round2_concatenated_final_design_stats_sub3.png`
+The script also prints summary statistics that were used for filtering:
+```
+           Length  Average_i_pTM  Average_i_pAE  Average_Binder_Energy_Score  ESM2_35M_PLL  ESM2_35M_PLL_Norm  METL-G-20M-1D
+count  675.000000     675.000000     675.000000                   675.000000    675.000000         675.000000     675.000000
+mean    86.149630       0.769304       0.215111                  -228.684193   -209.928286          -2.438040       3.452004
+std     19.470357       0.064124       0.051408                    57.451657     48.700573           0.159236       1.006219
+min     50.000000       0.580000       0.120000                  -399.490000   -314.912308          -2.904612       1.031595
+25%     70.000000       0.720000       0.170000                  -275.770000   -247.211050          -2.545492       2.754379
+50%     86.000000       0.780000       0.210000                  -224.390000   -209.866245          -2.446161       3.411098
+75%    104.000000       0.820000       0.250000                  -179.920000   -169.663794          -2.343204       4.166741
+max    120.000000       0.890000       0.340000                  -111.350000   -100.935247          -1.711663       6.880487
+```
+
+The 675 sequences were then filtered:
+- Eliminate those with the BindCraft `Notes` "Relaxed structure contains clashes".
+- `Average_i_pTM` >= 0.82 (75th percentile)
+- `Average_i_pAE` <= 0.17 (25th percentile)
+- `ESM2_35M_PLL` >= -169.663794 (75th percentile)
+- `METL-G-20M-1D` <= 4.166741 (75th percentile)
+- `Average_Binder_Energy_Score` >= -179.92 (75th percentile)
+
+The 18 remaining sequences were saved as `results/round2_concatenated_final_design_stats_sub4.tsv`.
+EGFR_l54_s382790_mpnn8 (yolo23) from submission 2 was still in this subset and ranked fairly well, so it was selected.
+EGFR_l80_s42487_mpnn1 (yolo17) from submission 1 was not in this subset, but it was also selected because it ranked fairly well and had no clashes.
+EGFR_l61_s584422_mpnn3 was selected because it was the only remaining sequence that specified a `Target_Hotspot`.
+
+The next four sequences maximized `Average_i_pTM` (skipping over EGFR_l60_s632945_mpnn4 that was tested in submission 2 and did not rank in the top 100): EGFR_l62_s815249_mpnn2, EGFR_l62_s958143_mpnn2, EGFR_l62_s958143_mpnn1, and EGFR_l62_s954907_mpnn6.
+These happened to be the sequences that also minimized `Average_i_pAE`.
+
+The final three sequences maximized `ESM2_35M_PLL` (skipping over EGFR_l51_s672443_mpnn3 and EGFR_l52_s649556_mpnn10 that were tested in submission 2 and did not rank in the top 100): EGFR_l54_s733980_mpnn1, EGFR_l62_s954907_mpnn3, and EGFR_l63_s786397_mpnn2.
+
+I inspected the structures output from BindCraft in the [Mol* 3D Viewer](https://www.rcsb.org/3d-view), aligned them on [UniProt](https://www.uniprot.org/align), and ran [BLAST](https://www.uniprot.org/blast) on UniProt to confirm low similarity to natural proteins.
 
 ## Third-party files
 - `bindcraft.def`: Apptainer Definition file created by [@komatsuna-san](https://github.com/martinpacesa/BindCraft/issues/23#issuecomment-2408333526).

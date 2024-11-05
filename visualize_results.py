@@ -34,6 +34,7 @@ def main(infile):
     vis_cols = ['Length', 'Average_i_pTM', 'Average_i_pAE', 'Average_Binder_Energy_Score', 'ESM2_35M_PLL',
                 'ESM2_35M_PLL_Norm', 'METL-G-20M-1D']
     df_selected = df[vis_cols]
+    print(df_selected.describe().to_string())
 
     # Create a pairplot
     g = sns.pairplot(df_selected, corner=True)
