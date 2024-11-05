@@ -1,5 +1,42 @@
 # Adaptyv EGFR protein design competition round 2
 
+## Strategy
+"If you can't beat 'em, join 'em".
+My overall strategy was to build on top of BindCraft based on its strong [round 1](https://www.adaptyvbio.com/blog/po102) performance and impressive [preprint](https://doi.org/10.1101/2024.09.30.615802).
+However, beyond using BindCraft to generate sequences there were several competing objectives:
+- Do something besides pure BindCraft to inject some "creativity" into the ranking or filtering
+- Balance the goals of having sequences selected for experimental testing (via top 100 ranking or creativity criteria) with generating strong binders that are likely to express
+
+Regarding the latter, the ranking metrics prioritized short sequences because the pseudo-log-likelihood (PLL) is not length normalized.
+Should I bias my BindCraft settings toward short sequences, or would that hurt success in the lab?
+The round 1 winner `martin.pacesa-EGFR_l138_s90285_mpnn2` had length 138 and a ESM2 650M PLL of -320.68, which would put it at risk of falling out of the top 100 in round 2!
+
+I decided to try multiple BindCraft settings and score them with ESM2 PLL and our own biophysics-based protein language model [METL](https://doi.org/10.1101/2024.03.15.585128).
+We know METL-Global has problems generalizing to all protein folds, but I also expected no one else would use it (creativity points!) and couldn't resist the opportunity for some self-promotion.
+
+## Lessons learned
+BindCraft was fairly easy to run in my local research computing facility given the complexity of the underlying model.
+I did not initially anticipate how much GPU memory and time it would require when running with the full EGFR sequence as input.
+I wasted time with failed jobs that ran out of GPU memory or hit runtime limits.
+
+I was slightly dismayed by the aesthetics of my designs.
+My final submissions were all bland: small and helical predicted structures.
+I tried penalizing helicity in a few runs, but didn't explore that deeply, and those results were not my best-scoring sequences.
+I'm jealous of the [solenoid](https://x.com/_judewells/status/1853805775807758465) Jude Wells showed.
+Maybe elegance can be part of the selection process for the second set of 100.
+
+Besides those minor gripes, running BindCraft was pleasant.
+It was easy to configure and explore the design space and run in a high-throughput setting.
+It computed and reported a lot of metrics I was interested in so I only added ESM2 PLL and the METL score myself.
+
+BindCraft may not be capable of maximizing iPTM and minimizing iPAE as much as an algorithm that only optimizes those scores.
+That is likely bad for climbing the leaderboard but good for designing functional proteins.
+
+## Overall organization
+- BindCraft runs in an Apptainer container on GPUs in the UW-Madison research computing facility with jobs managed by HTCondor.
+- Local analysis code runs on CPU in a conda environment to collect and visualize the BindCraft results.
+- A few intermediate submissions gave partial feedback about which sequences ranked well and which strategies worked well.
+
 ## Building BindCraft
 I built the Apptainer container with an interactive CHTC job following their [instructions](https://chtc.cs.wisc.edu/uw-research-computing/apptainer-htc) and the submit file `build_bindcraft.sub`.
 This was submitted with `condor_submit -i build_bindcraft.sub`.
@@ -26,18 +63,18 @@ cd params/
 $ scp alphafold_params_2022-12-06.tar agitter@transfer.chtc.wisc.edu:/staging/agitter/
 ```
 
-## EGFR settings
+## BindCraft EGFR settings
 The structure (PDB [6ARU](https://www.rcsb.org/structure/6aru)) and interaction sites are those provided by [Adaptyv](https://design.adaptyvbio.com/).
-A different HTCondor submission file `run_bindcraft_EGFR_<n>.sub` was used for each of the settings below with the same exectuable script `run_bindcraft_EGFR.sh`.
+A different HTCondor submission file `run_bindcraft_EGFR_<n>.sub` was used for each of the settings below with the same executable script `run_bindcraft_EGFR.sh`.
 Environment variables controlled which BindCraft settings in the `EGFR` subdirectory were passed to the script.
 1. Default BindCraft filters and advanced settings. All interaction sites from Adaptyv. Lengths 50 to 250.
 2. Default BindCraft filters and advanced settings. Domain 3 structure without interaction sites. Lengths 60 to 120. Strategy from [@design_proteins](https://x.com/design_proteins/status/1851295516564525515) and structure from [@btnaughton](https://x.com/btnaughton/status/1851436952446537980).
 3. Default BindCraft filters and advanced settings. Domain 3 structure without interaction sites. Lengths 50 to 75. Modifies strategy 2 with shorter lengths.
 4. Default BindCraft filters. Modify advanced settings to increase `weights_pae_inter` and `weights_iptm` 4x. Domain 3 structure without interaction sites. Lengths 60 to 120.
 5. Default BindCraft filters. Modify advanced settings to increase `weights_pae_inter` and `weights_iptm` 4x and `weights_helicity` to -1. Domain 3 structure without interaction sites. Lengths 60 to 120.
-6. Default BindCraft filters and advanced settings. All interaction sites from Adaptyv. Lengths 50 to 200. Similar to setting 1 but reconfigured into a larger number of shorter jobs and shortened max length. Reduced iteractions to reduce runtime.
+6. Default BindCraft filters and advanced settings. All interaction sites from Adaptyv. Lengths 50 to 200. Similar to setting 1 but reconfigured into a larger number of shorter jobs and shortened max length. Reduced iterations to reduce runtime.
 7. Default BindCraft filters. Modify advanced settings to increase `weights_pae_inter` and `weights_iptm` 4x. Domain 3 structure with interaction sites. Lengths 60 to 120.
-8. Default BindCraft filters and advanced settings. All interaction sites from Adaptyv. Lengths 50 to 200. Similar to setting 6 but further reduced iteractions to reduce runtime.
+8. Default BindCraft filters and advanced settings. All interaction sites from Adaptyv. Lengths 50 to 200. Similar to setting 6 but further reduced iterations to reduce runtime.
 
 Several of these settings did not produce any sequences because the jobs timed out or did not finish before the competition deadline.
 
@@ -84,6 +121,8 @@ That file was manually reviewed to select five sequences with unique seeds that 
 The other five sequences were those with unique seeds that have the best (highest) `ESM2_35M_PLL` score.
 This was not length normalized, so they are all very short sequences.
 The resulting 10 sequences are `round2-egfr-inhibitors-submission3-key.fasta` and `round2-egfr-inhibitors-submission3.fasta.
+
+I did not receive results for this submission after 24 hours and made submission 4 without that feedback.
 
 ### Submission 4 - final submission
 No additional BindCraft runs finished before the deadline, so the fourth and final submission is also based on `results/round2_concatenated_final_design_stats_sub3.tsv`.
@@ -132,6 +171,10 @@ I inspected the structures output from BindCraft in the [Mol* 3D Viewer](https:/
 - `6aru.pdb`: Structure of Cetuximab Fab mutant in complex with EGFR extracellular domain (PDB [6ARU](https://www.rcsb.org/structure/6aru))
 - `6aru_final_chain_A_domain_3.pdb`: Domain 3 of EGFR structure [6ARU](https://www.rcsb.org/structure/6aru) from @btnaughton's [gist](https://gist.github.com/hgbrian/affd44dc63c6fb01a5a9620c24c74b26) as suggested by [@design_proteins](https://x.com/design_proteins/status/1851308130392473919).
 - Plotting helper function from [Stack Overflow](https://stackoverflow.com/a/50835066)
+
+## Round 2 design strategies from other participants
+- [Jude Wells](https://x.com/_judewells/status/1853805775807758465): Chai1 + Adaptyv metrics + Rosetta InterfaceAnalyzer dG score
+- keaun (via [OpenBioML Discord](https://www.openbioml.org/)): throwback method [PIPE](https://doi.org/10.1186/1471-2105-7-365)
 
 ## Apptainer build error
 Errors encountered related to `/tmp` permissions during container build.
