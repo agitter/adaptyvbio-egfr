@@ -33,6 +33,10 @@ It computed and reported a lot of metrics I was interested in so I only added ES
 BindCraft may not be capable of maximizing iPTM and minimizing iPAE as much as an algorithm that only optimizes those scores.
 That is likely bad for climbing the leaderboard but good for designing functional proteins.
 
+Ultimately, Adaptyv [doubled](https://adaptyvbio.substack.com/p/protein-design-competition-update) the number of experimentally tested proteins and selected 1-5 sequences per participant who submitted a description.
+This was a fair way to address concerns about overfitting to the leaderboard metrics.
+Had I known I was not going to make it into the top 100 and would still have some sequences tested, I might have tried more long sequences and prioritized PLL a little less.
+
 ## Overall organization
 - BindCraft runs in an Apptainer container on GPUs in the UW-Madison research computing facility with jobs managed by HTCondor.
 - Local analysis code runs on CPU in a conda environment to collect and visualize the BindCraft results.
