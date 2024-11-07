@@ -165,6 +165,8 @@ The final three sequences maximized `ESM2_35M_PLL` (skipping over EGFR_l51_s6724
 
 I inspected the structures output from BindCraft in the [Mol* 3D Viewer](https://www.rcsb.org/3d-view), aligned them on [UniProt](https://www.uniprot.org/align), and ran [BLAST](https://www.uniprot.org/blast) on UniProt to confirm low similarity to natural proteins.
 
+EGFR_l54_s382790_mpnn8 (yolo23), EGFR_l54_s733980_mpnn1 (yolo46), and EGFR_l63_s786397_mpnn2 (yolo48) were selected for [experimental testing](https://foundry.adaptyvbio.com/egfr_design_competition_2)!
+
 ## Third-party files
 - `bindcraft.def`: Apptainer Definition file created by [@komatsuna-san](https://github.com/martinpacesa/BindCraft/issues/23#issuecomment-2408333526).
 - `bindcraft-v1.1.0.tar.gz`: BindCraft [v1.1.0 release](https://github.com/martinpacesa/BindCraft/releases/tag/v1.1.0) archive. Available under the [MIT License](https://github.com/martinpacesa/BindCraft/blob/main/LICENSE).

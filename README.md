@@ -36,6 +36,7 @@ Also, some of the sequences (e.g. `gitter-yolo3` and `gitter-yolo5`) exhibited a
 
 ## Round 2
 The [`round2`](round2/) subdirectory contains the complete strategy, code, and submissions for round 2 of the competition.
+`gitter.yolo23`, `gitter.yolo46`, and `gitter.yolo48` were selected for [experimental testing](https://foundry.adaptyvbio.com/egfr_design_competition_2)!
 
 ## Additional information
 - Adaptyv Bio [results](https://foundry.adaptyvbio.com/egfr_design_competition)
