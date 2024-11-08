@@ -32,6 +32,7 @@ It computed and reported a lot of metrics I was interested in so I only added ES
 
 BindCraft may not be capable of maximizing iPTM and minimizing iPAE as much as an algorithm that only optimizes those scores.
 That is likely bad for climbing the leaderboard but good for designing functional proteins.
+Some of my observations about aesthetics, iPTM, and iPAE may be due to choices I made about BindCraft settings and not the tool itself.
 
 Ultimately, Adaptyv [doubled](https://adaptyvbio.substack.com/p/protein-design-competition-update) the number of experimentally tested proteins and selected 1-5 sequences per participant who submitted a description.
 This was a fair way to address concerns about overfitting to the leaderboard metrics.
