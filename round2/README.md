@@ -188,6 +188,7 @@ EGFR_l54_s382790_mpnn8 (yolo23), EGFR_l54_s733980_mpnn1 (yolo46), and EGFR_l63_s
 - [Team s1995825](https://x.com/leocastorina/status/1854640224359285006): [TIMED-Design](https://doi.org/10.1093/protein/gzae002)
 - [@suzuki2001_](https://x.com/suzuki2001_/status/1854840776594993321) (aka begonia.sp.13): BindCraft and RSO + ColabFold + AlphaFold3 server, with details in a GitHub [repo](https://github.com/suzuki-2001/adaptyv-protein-comp)
 - [cbrown](https://github.com/alpha29/BindCraft): BindCraft
+- [antorsae](https://www.linkedin.com/pulse/our-jouney-adaptyvbio-protein-design-competition-bustos-md-phd-ykmaf): pipeline based on modifying endogenous ligands, includes [RFdiffusion](https://doi.org/10.1038/s41586-023-06415-8)
 
 ## Apptainer build error
 Errors encountered related to `/tmp` permissions during container build.
