@@ -173,6 +173,17 @@ I inspected the structures output from BindCraft in the [Mol* 3D Viewer](https:/
 
 EGFR_l54_s382790_mpnn8 (yolo23), EGFR_l54_s733980_mpnn1 (yolo46), and EGFR_l63_s786397_mpnn2 (yolo48) were selected for [experimental testing](https://foundry.adaptyvbio.com/egfr_design_competition_2)!
 
+## Experimental screening analysis
+The 400 sequences [selected](https://foundry.adaptyvbio.com/egfr_design_competition_2) for experimental screening were formatted into a FASTA file with the ChatGPT 4o mini-suggested (and manually corrected) command:
+```
+awk 'NR % 6 == 1 {print ">" $0} NR % 6 == 5 {print $0}' adaptyv-egfr-design-competition-round2-400-seqs-2024-11-07.txt > adaptyv-egfr-design-competition-round2-400-seqs-2024-11-07.fasta
+```
+The original text file was scraped from the foundry website.
+These files are in the [`screening`](screening) subdirectory.
+
+I ran CLUSTAL multiple sequence alignment by MUSCLE (3.8) with the [EBI web server](https://www.ebi.ac.uk/jdispatcher/msa/muscle?stype=protein) and saved the results as `muscle-I20241108-200525-0426-34410001-p1m.aln-clustalw`.
+Initial inspection of the results suggests that naively aligning all the sequences in this manner failed, so a more sophisticated approach will be needed.
+
 ## Third-party files
 - `bindcraft.def`: Apptainer Definition file created by [@komatsuna-san](https://github.com/martinpacesa/BindCraft/issues/23#issuecomment-2408333526).
 - `bindcraft-v1.1.0.tar.gz`: BindCraft [v1.1.0 release](https://github.com/martinpacesa/BindCraft/releases/tag/v1.1.0) archive. Available under the [MIT License](https://github.com/martinpacesa/BindCraft/blob/main/LICENSE).
