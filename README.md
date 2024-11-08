@@ -43,3 +43,4 @@ The [`round2`](round2/) subdirectory contains the complete strategy, code, and s
 - Adaptyv Bio [GitHub dataset](https://github.com/adaptyvbio/egfr_competition_1)
 - Adaptyv Bio [round 1 competition lessons](https://adaptyvbio.substack.com/p/protein-optimization-102-lessons)
 - The [BioLM](https://biolm.ai/) team submitted additional sequences after round 1 and [shared their analysis](https://x.com/NikhilHaas/status/1844446275967779284)
+- [suzuki-2001](https://github.com/suzuki-2001)'s Adaptyv competition [repo](https://github.com/suzuki-2001/adaptyv-protein-comp)

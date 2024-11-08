@@ -35,7 +35,7 @@ That is likely bad for climbing the leaderboard but good for designing functiona
 Some of my observations about aesthetics, iPTM, and iPAE may be due to choices I made about BindCraft settings and not the tool itself.
 
 Ultimately, Adaptyv [doubled](https://adaptyvbio.substack.com/p/protein-design-competition-update) the number of experimentally tested proteins and selected 1-5 sequences per participant who submitted a description.
-This was a fair way to address concerns about overfitting to the leaderboard metrics.
+This was a fair way to address concerns about overfitting to the leaderboard metrics, which they were already [thinking about](https://x.com/TheGermanPole/status/1854837263563165963).
 Had I known I was not going to make it into the top 100 and would still have some sequences tested, I might have tried more long sequences and prioritized PLL a little less.
 
 ## Overall organization
@@ -181,8 +181,12 @@ EGFR_l54_s382790_mpnn8 (yolo23), EGFR_l54_s733980_mpnn1 (yolo46), and EGFR_l63_s
 - Plotting helper function from [Stack Overflow](https://stackoverflow.com/a/50835066)
 
 ## Round 2 design strategies from other participants
-- [Jude Wells](https://x.com/_judewells/status/1853805775807758465): Chai1 + Adaptyv metrics + Rosetta InterfaceAnalyzer dG score
+- [Jude Wells](https://x.com/_judewells/status/1853805775807758465): [Chai1](https://doi.org/10.1101/2024.10.10.615955) + Adaptyv metrics + Rosetta InterfaceAnalyzer dG score
 - keaun (via [OpenBioML Discord](https://www.openbioml.org/)): throwback method [PIPE](https://doi.org/10.1186/1471-2105-7-365)
+- [@design_proteins](https://x.com/design_proteins/status/1854744521227092275): [Relaxed Sequence Optimization](https://doi.org/10.1126/science.adq1741) (RSO)
+- [Team s1995825](https://x.com/leocastorina/status/1854640224359285006): [TIMED-Design](https://doi.org/10.1093/protein/gzae002)
+- [@suzuki2001_](https://x.com/suzuki2001_/status/1854840776594993321) (aka begonia.sp.13): BindCraft and RSO + ColabFold + AlphaFold3 server, with details in a GitHub [repo](https://github.com/suzuki-2001/adaptyv-protein-comp)
+- [cbrown](https://github.com/alpha29/BindCraft): BindCraft
 
 ## Apptainer build error
 Errors encountered related to `/tmp` permissions during container build.
