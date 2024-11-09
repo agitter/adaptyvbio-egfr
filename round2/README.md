@@ -201,6 +201,7 @@ Results from CLUSTAL O (1.2.4) (`clustalo-I20241109-001210-0159-89689691-p1m.aln
 - [@suzuki2001_](https://x.com/suzuki2001_/status/1854840776594993321) (aka begonia.sp.13): BindCraft and RSO + ColabFold + AlphaFold3 server, with details in a GitHub [repo](https://github.com/suzuki-2001/adaptyv-protein-comp)
 - [cbrown](https://github.com/alpha29/BindCraft): BindCraft
 - [antorsae](https://www.linkedin.com/pulse/our-jouney-adaptyvbio-protein-design-competition-bustos-md-phd-ykmaf): pipeline based on modifying endogenous ligands, includes [RFdiffusion](https://doi.org/10.1038/s41586-023-06415-8)
+- [@youngsuko9](https://x.com/youngsuko9/status/1855066343407599846): [Raygun](https://doi.org/10.1101/2024.08.13.607858) + [ProTrek](https://doi.org/10.1101/2024.05.30.596740)
 
 ## Apptainer build error
 Errors encountered related to `/tmp` permissions during container build.
