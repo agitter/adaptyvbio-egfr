@@ -183,6 +183,7 @@ These files are in the [`screening`](screening) subdirectory.
 
 I ran CLUSTAL multiple sequence alignment by MUSCLE (3.8) with the [EBI web server](https://www.ebi.ac.uk/jdispatcher/msa/muscle?stype=protein) and saved the results as `muscle-I20241108-200525-0426-34410001-p1m.aln-clustalw`.
 Initial inspection of the results suggests that naively aligning all the sequences in this manner failed, so a more sophisticated approach will be needed.
+Results from CLUSTAL O (1.2.4) (`clustalo-I20241109-001210-0159-89689691-p1m.aln-clustal_num`) and Kalign (`kalign-I20241109-001949-0119-51742896-p1m.aln-clustalw`), also through EBI, were not much better.
 
 ## Third-party files
 - `bindcraft.def`: Apptainer Definition file created by [@komatsuna-san](https://github.com/martinpacesa/BindCraft/issues/23#issuecomment-2408333526).
