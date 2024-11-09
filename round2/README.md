@@ -184,6 +184,11 @@ These files are in the [`screening`](screening) subdirectory.
 I ran CLUSTAL multiple sequence alignment by MUSCLE (3.8) with the [EBI web server](https://www.ebi.ac.uk/jdispatcher/msa/muscle?stype=protein) and saved the results as `muscle-I20241108-200525-0426-34410001-p1m.aln-clustalw`.
 Initial inspection of the results suggests that naively aligning all the sequences in this manner failed, so a more sophisticated approach will be needed.
 Results from CLUSTAL O (1.2.4) (`clustalo-I20241109-001210-0159-89689691-p1m.aln-clustal_num`) and Kalign (`kalign-I20241109-001949-0119-51742896-p1m.aln-clustalw`), also through EBI, were not much better.
+Given the diversity of the sequences, a multiple sequence alignment is likely not possible.
+
+Clustering with [MMseqs2](https://github.com/soedinglab/mmseqs2) gave better results.
+I used the Docker image `ghcr.io/soedinglab/mmseqs2` to run `easy-cluster` on `adaptyv-egfr-design-competition-round2-400-seqs-2024-11-07.fasta` for a quick initial pass over the submissions.
+There are many singleton clusters, but also some designs that group together.
 
 ## Third-party files
 - `bindcraft.def`: Apptainer Definition file created by [@komatsuna-san](https://github.com/martinpacesa/BindCraft/issues/23#issuecomment-2408333526).
