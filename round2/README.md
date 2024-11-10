@@ -183,7 +183,15 @@ These files are in the [`screening`](screening) subdirectory.
 
 Clustering with [MMseqs2](https://github.com/soedinglab/mmseqs2) gave reasonable preliminary results.
 I used the Docker image `ghcr.io/soedinglab/mmseqs2` to run `easy-cluster` on `adaptyv-egfr-design-competition-round2-400-seqs-2024-11-07.fasta` for a quick initial pass over the submissions.
-There are many singleton clusters, but also some designs that group together.
+There are 116 singleton clusters (including my 3 submissions), but also some designs that group together.
+Four clusters contain more than 10 sequences
+- `adaptyv-egfr-design-competition-round2-mmseqs2-cluster1-egf.fasta`: 50 sequences, added EGF (P01133-971-1023)
+- `adaptyv-egfr-design-competition-round2-mmseqs2-cluster2.fasta`: 47 sequences
+- `adaptyv-egfr-design-competition-round2-mmseqs2-cluster3-egf.fasta`: 41 sequences, added EGF (P01133-971-1023)
+- `adaptyv-egfr-design-competition-round2-mmseqs2-cluster4.fasta`: 36 sequences
+I added [EGF](https://www.uniprot.org/uniprotkb/P01133/entry#PRO_0000007541) to the two clusters with sequences that appeared to similar to EGF.
+I ran CLUSTAL multiple sequence alignment by MUSCLE (3.8) with the [EBI web server](https://www.ebi.ac.uk/jdispatcher/msa/muscle?stype=protein) for each of these clusters and saved the results with a `muscle` prefix and both `.aln-clustalw` and `.html` suffixes.
+The complete MUSCLE percent identity matrix `muscle-adaptyv-egfr-design-competition-round2-400-seqs-no-spaces.pim` also highlights some of the cluster structure and could be used for downstream analysis.
 
 ## Third-party files
 - `bindcraft.def`: Apptainer Definition file created by [@komatsuna-san](https://github.com/martinpacesa/BindCraft/issues/23#issuecomment-2408333526).
