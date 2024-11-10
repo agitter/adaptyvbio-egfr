@@ -193,6 +193,8 @@ I added [EGF](https://www.uniprot.org/uniprotkb/P01133/entry#PRO_0000007541) to 
 I ran CLUSTAL multiple sequence alignment by MUSCLE (3.8) with the [EBI web server](https://www.ebi.ac.uk/jdispatcher/msa/muscle?stype=protein) for each of these clusters and saved the results with a `muscle` prefix and both `.aln-clustalw` and `.html` suffixes.
 The complete MUSCLE percent identity matrix `muscle-adaptyv-egfr-design-competition-round2-400-seqs-no-spaces.pim` also highlights some of the cluster structure and could be used for downstream analysis.
 
+[@btnaughton](https://x.com/btnaughton/status/1855710729141457059) made a cool [video](https://www.youtube.com/watch?v=DJkY-Tkg8RE) animating structures of the top 100 submissions with [code](https://gist.github.com/hgbrian/316848b3ff6a5e415941ab9871dffdf0) available.
+
 ## Third-party files
 - `bindcraft.def`: Apptainer Definition file created by [@komatsuna-san](https://github.com/martinpacesa/BindCraft/issues/23#issuecomment-2408333526).
 - `bindcraft-v1.1.0.tar.gz`: BindCraft [v1.1.0 release](https://github.com/martinpacesa/BindCraft/releases/tag/v1.1.0) archive. Available under the [MIT License](https://github.com/martinpacesa/BindCraft/blob/main/LICENSE).
