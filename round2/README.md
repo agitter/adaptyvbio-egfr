@@ -212,6 +212,7 @@ The complete MUSCLE percent identity matrix `muscle-adaptyv-egfr-design-competit
 - [cbrown](https://github.com/alpha29/BindCraft): BindCraft
 - [antorsae](https://www.linkedin.com/pulse/our-jouney-adaptyvbio-protein-design-competition-bustos-md-phd-ykmaf): pipeline based on modifying endogenous ligands, includes [RFdiffusion](https://doi.org/10.1038/s41586-023-06415-8)
 - [@youngsuko9](https://x.com/youngsuko9/status/1855066343407599846): [Raygun](https://doi.org/10.1101/2024.08.13.607858) + [ProTrek](https://doi.org/10.1101/2024.05.30.596740)
+- [@btnaughton](https://x.com/btnaughton/status/1855746146934853944): used a glycine linker to combine pairs of the round 1 first submission, second place submision, or EGF
 
 ## Apptainer build error
 Errors encountered related to `/tmp` permissions during container build.
