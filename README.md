@@ -37,10 +37,14 @@ Also, some of the sequences (e.g. `gitter-yolo3` and `gitter-yolo5`) exhibited a
 ## Round 2
 The [`round2`](round2/) subdirectory contains the complete strategy, code, and submissions for round 2 of the competition.
 `gitter.yolo23`, `gitter.yolo46`, and `gitter.yolo48` were selected for [experimental testing](https://foundry.adaptyvbio.com/egfr_design_competition_2)!
+All three expressed, and `gitter.yolo48` was a [weak binder](https://foundry.adaptyvbio.com/competition).
+I shared [thoughts](https://x.com/anthonygitter/status/1865608416418288043) on the round 2 results.
 
 ## Additional information
-- Adaptyv Bio [results](https://foundry.adaptyvbio.com/egfr_design_competition)
+- Adaptyv Bio [round 1 results](https://foundry.adaptyvbio.com/egfr_design_competition)
 - Adaptyv Bio [GitHub dataset](https://github.com/adaptyvbio/egfr_competition_1)
 - Adaptyv Bio [round 1 competition lessons](https://adaptyvbio.substack.com/p/protein-optimization-102-lessons)
 - The [BioLM](https://biolm.ai/) team submitted additional sequences after round 1 and [shared their analysis](https://x.com/NikhilHaas/status/1844446275967779284)
 - [suzuki-2001](https://github.com/suzuki-2001)'s Adaptyv competition [repo](https://github.com/suzuki-2001/adaptyv-protein-comp)
+- Adaptyv Bio [round 2 submission analysis](https://www.adaptyvbio.com/blog/po103)
+- Adaptyv Bio [round 2 results](https://foundry.adaptyvbio.com/competition)
