@@ -214,6 +214,7 @@ The complete MUSCLE percent identity matrix `muscle-adaptyv-egfr-design-competit
 - [@youngsuko9](https://x.com/youngsuko9/status/1855066343407599846): [Raygun](https://doi.org/10.1101/2024.08.13.607858) + [ProTrek](https://doi.org/10.1101/2024.05.30.596740)
 - [@btnaughton](https://x.com/btnaughton/status/1855746146934853944): used a glycine linker to combine pairs of the round 1 first submission, second place submision, or EGF
 - [salireza111](https://salireza111.github.io/Myblog/Texts/17/17/): peptide design pipeline that included crossover with TGF
+- [Cradle Bio](https://www.cradle.bio/blog/adaptyv-protein-design-competition): modified Cetuximab framework region
 
 ## Apptainer build error
 Errors encountered related to `/tmp` permissions during container build.
