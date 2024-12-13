@@ -42,9 +42,10 @@ I shared [thoughts](https://x.com/anthonygitter/status/1865608416418288043) on t
 
 ## Additional information
 - Adaptyv Bio [round 1 results](https://foundry.adaptyvbio.com/egfr_design_competition)
-- Adaptyv Bio [GitHub dataset](https://github.com/adaptyvbio/egfr_competition_1)
+- Adaptyv Bio [round 1 GitHub dataset](https://github.com/adaptyvbio/egfr_competition_1)
 - Adaptyv Bio [round 1 competition lessons](https://adaptyvbio.substack.com/p/protein-optimization-102-lessons)
 - The [BioLM](https://biolm.ai/) team submitted additional sequences after round 1 and [shared their analysis](https://x.com/NikhilHaas/status/1844446275967779284)
 - [suzuki-2001](https://github.com/suzuki-2001)'s Adaptyv competition [repo](https://github.com/suzuki-2001/adaptyv-protein-comp)
 - Adaptyv Bio [round 2 submission analysis](https://www.adaptyvbio.com/blog/po103)
 - Adaptyv Bio [round 2 results](https://foundry.adaptyvbio.com/competition)
+- Adaptyv Bio [round 2 GitHub dataset](https://github.com/adaptyvbio/egfr_competition_2)
