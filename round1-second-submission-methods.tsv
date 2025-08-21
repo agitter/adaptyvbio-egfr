@@ -1,0 +1,11 @@
+gitter-yolo2	BLOSUM62 matrix, manual
+gitter-yolo3	ProTrek
+gitter-yolo4	ProTrek
+gitter-yolo5	ProTrek
+gitter-yolo6	Llama 3.1-405B
+gitter-yolo7	Llama 3.1-405B
+gitter-yolo8	Llama 3.1-405B
+gitter-yolo9	Llama 3.1-405B
+gitter-yolo10	Llama 3.1-405B
+P01133-971-1023	positive control
+deepsatflow-design:7 n:0|mpnn:1.320|plddt:0.922|i_ptm:0.893|i_pae:4.337|rmsd:1.423	RFdiffusion, ProteinMPNN, AlphaFold-Multimer
