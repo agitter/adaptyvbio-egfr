@@ -17,7 +17,7 @@ I made a post-round 1 submission to Adaptyv for additional experimental screenin
 - Human EGF
 - An additional sequence from [@deepsatflow](https://x.com/deepsatflow/status/1838608857372733659)
 
-`round1-second-submission-methods.tsv` provides a short summary of the methods used to design each of these sequences.
+`round1-methods.tsv` provides a short summary of the methods used to design each of these sequences as well as `gitter-yolo1` that was selected by Adaptyv.
 
 Human EGF was suggested by [@btnaughton](https://x.com/btnaughton/status/1838659396337099172) and seconded by [@gottapatchemall](https://x.com/gottapatchemall/status/1838678445725036671).
 It was of interest because many of the top-scoring designs by [iPAE](https://design.adaptyvbio.com/), including `gitter-yolo1`, were based on EGF but did not bind EGFR.
